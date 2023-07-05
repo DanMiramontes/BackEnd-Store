@@ -1,8 +1,8 @@
 from flask import Flask
-from src.routes import hello_world
+from src.routes import categories
 
 app = Flask(__name__)
 
 def init_app():
-    app.register_blueprint(hello_world.main, url_prefix='/hello')
+    app.register_blueprint(categories.main, url_prefix='/api/categories')
     return app
