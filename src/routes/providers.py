@@ -4,7 +4,7 @@ from src.models.Providers import Providers
 main = Blueprint('providers',__name__)
 
 @main.route('/',methods=['GET'])
-def index_categories():
+def index_provider():
        providers = ProviderServices.index_provider()
        if providers is None:
               response = jsonify({"status":"Failer","message":"no content"})
@@ -49,7 +49,7 @@ def create_provider():
        return response,201
 
 @main.route('/<id>',methods=['PUT'])
-def update_product(id):
+def update_provider(id):
        if id is None:
           response = jsonify({"status":"Failer","message":"id is required"})
           return response,400

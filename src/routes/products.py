@@ -4,7 +4,7 @@ from src.models.Products import Products
 main = Blueprint('products',__name__)
 
 @main.route('/',methods=['GET'])
-def index_categories():
+def index_product():
        products =  ProductsServices.index_product()
        if products is None:
               response = jsonify({"status":"Failer","message":"no content"})

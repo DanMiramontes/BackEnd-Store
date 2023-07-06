@@ -7,6 +7,7 @@ main = Blueprint('categories',__name__)
 def index_categories():
        categories =  CategoriesService.index_categories()
        
+       
        if categories is None:
               response = jsonify({"status":"Failer","message":"no content"})
               return response,400

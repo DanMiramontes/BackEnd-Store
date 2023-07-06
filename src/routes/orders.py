@@ -5,7 +5,7 @@ main = Blueprint('orders',__name__)
 
 
 @main.route('/',methods=['GET'])
-def index_categories():
+def index_order():
        orders = OrderServices.index_order()
        if orders is None:
               response = jsonify({"status":"Failer","message":"no content"})
@@ -30,7 +30,7 @@ def show_order(id):
 
 
 @main.route('/',methods=['POST'])
-def create_product():
+def create_order():
        provider_id = request.json['provider_id']
        total = request.json['total']
        
@@ -52,7 +52,7 @@ def create_product():
 
 
 @main.route('/<id>',methods=['PUT'])
-def update_product(id):
+def update_order(id):
        
        if id is None:
           response = jsonify({"status":"Failer","message":"id is required"})
@@ -81,7 +81,7 @@ def update_product(id):
        return response,200
 
 @main.route('/<id>',methods=['DELETE'])
-def delete_category(id):
+def delete_order(id):
        if id is None:
           response = jsonify({"status":"Failer","message":"id is required"})
           return response,400
