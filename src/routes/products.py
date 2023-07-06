@@ -37,15 +37,15 @@ def create_product():
 
 
        if name is None:
-              response = jsonify({"status":"Failer","message":"name is requeried"})
+              response = jsonify({"status":"Failer","message":"name is requried"})
               return response,400
        
        if description is None:
-              response = jsonify({"status":"Failer","message":"description is requeried"})
+              response = jsonify({"status":"Failer","message":"description is required"})
               return response,400
        
        if category is None:
-              response = jsonify({"status":"Failer","message":"category is requeried"})
+              response = jsonify({"status":"Failer","message":"category is required"})
               return response,400
        
        new_product = Products(name,description,category)
@@ -68,15 +68,15 @@ def update_product(id):
 
 
        if name is None:
-              response = jsonify({"status":"Failer","message":"name is requeried"})
+              response = jsonify({"status":"Failer","message":"name is required"})
               return response,400
        
        if description is None:
-              response = jsonify({"status":"Failer","message":"description is requeried"})
+              response = jsonify({"status":"Failer","message":"description is required"})
               return response,400
        
        if category is None:
-              response = jsonify({"status":"Failer","message":"category is requeried"})
+              response = jsonify({"status":"Failer","message":"category is required"})
               return response,400
        
        
@@ -100,5 +100,5 @@ def delete_product(id):
        if product is None:
           response = jsonify({"status":"Failer","message":"error"})
 
-       response =  jsonify({"status":"Delete","message":f"category con id:{id} eliminado"})
+       response =  jsonify({"status":"Delete","message":f"product con id:{id} eliminado"})
        return response,204

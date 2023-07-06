@@ -36,11 +36,11 @@ def create_category():
 
 
        if name is None:
-              response = jsonify({"status":"Failer","message":"name is requeried"})
+              response = jsonify({"status":"Failer","message":"name is required"})
               return response,400
        
        if description is None:
-              response = jsonify({"status":"Failer","message":"description is requeried"})
+              response = jsonify({"status":"Failer","message":"description is required"})
               return response,400
        
        new_category = Categories(name,description)
@@ -68,11 +68,11 @@ def update_category(id):
 
 
        if name is None:
-              response = jsonify({"status":"Failer","message":"name is requeried"})
+              response = jsonify({"status":"Failer","message":"name is required"})
               return response,400
        
        if description is None:
-              response = jsonify({"status":"Failer","message":"description is requeried"})
+              response = jsonify({"status":"Failer","message":"description is required"})
               return response,400
        
        update_category = Categories(name,description)

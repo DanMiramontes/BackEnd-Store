@@ -21,7 +21,7 @@ def show_provider(id):
        
        provider = ProviderServices.show_provider(id)
        if provider is None:
-              response = jsonify({"status":"Failer","message":"category not found"})
+              response = jsonify({"status":"Failer","message":"provider not found"})
               return response,400
        
        response =  jsonify({"status":"OK","data":provider})
@@ -87,5 +87,5 @@ def delete_provider(id):
        if provider is None:
           response = jsonify({"status":"Failer","message":"error"})
 
-       response =  jsonify({"status":"Delete","message":f"category con id:{id} eliminado"})
+       response =  jsonify({"status":"Delete","message":f"provider con id:{id} eliminado"})
        return response,204
