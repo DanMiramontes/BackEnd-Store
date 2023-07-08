@@ -38,8 +38,8 @@ DELIMITER ;
 DELIMITER //
 CREATE PROCEDURE sp_update_product(IN id INT, IN pName VARCHAR(50), IN pDescription VARCHAR(255),pCategory_id INT)
 BEGIN
-    UPDATE store.products
+    UPDATE products
     SET name = pName , description = pDescription, category_id = pCategory_id
-    WHERE products.id = id;
+    WHERE store.products.id = id;
 END //
 DELIMITER ;
